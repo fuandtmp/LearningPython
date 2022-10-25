@@ -1,3 +1,5 @@
-date = '28-10-2022'
+# to learn use randint function
+from random import randint
+randomize_num = randint(1, 10)
+print(randomize_num)
 
-print(date[3:5])
