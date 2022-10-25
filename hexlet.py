@@ -1,13 +1,16 @@
-# define function which get string, get number of index in string and slice that and add
-# three dot in end of line
-def truncate(get_str, amount_char):
-    text = get_str[0:amount_char] + '...'
-    return text
+# Create a function which get card number and amount stars before last 4 numbers
+def get_hidden_card(number_of_card, index_of_stars = 4):
+    stars = '*' * index_of_stars
+    hidden_number = stars + str(number_of_card[-4:])
+    return hidden_number
+# Enter card number
+print('Please, enter a card number:', end = ' ')
 
-# define two variables which get string and index for function "truncate"
-some_text = 'Moya testovaya funcia'
-index = int(4)
+num = str(input())
+# Use function get_hidden_number
 
+num = get_hidden_card(num)
 
 # Print result
-print(truncate(some_text, index))
+
+print(num)
