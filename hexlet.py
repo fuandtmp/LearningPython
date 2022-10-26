@@ -1,16 +1,19 @@
-# Create a function which get card number and amount stars before last 4 numbers
-def get_hidden_card(number_of_card, index_of_stars = 4):
-    stars = '*' * index_of_stars
-    hidden_number = stars + str(number_of_card[-4:])
-    return hidden_number
-# Enter card number
-print('Please, enter a card number:', end = ' ')
+# define function which check is url correct or not
+def normalize_url(entered_url):
+    if entered_url.find('http://') == 0:
+        # we get url with http:// title, then erase first 7 simbols and add https:// to string
+        return 'https://' + entered_url[7:]
+    elif entered_url.find('https://') == 0:
+        # we get url with https:// title, then just return that
+        return entered_url
+    else:
+        # we get url without title, then and add https:// to string
+        return 'https://' + entered_url
 
-num = str(input())
-# Use function get_hidden_number
 
-num = get_hidden_card(num)
+# get url from user
+print('Please, enter a url:', end='')
 
-# Print result
-
-print(num)
+url = input('')
+# print correct url
+print(normalize_url(url))
